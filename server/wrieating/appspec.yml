@@ -3,22 +3,22 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ec2-user
+    destination: /opt/codedeploy-agent/deployment-root/5dc14e31-dd79-4c1f-b906-69d78e49fe9b/d-ULW50PDQN/deployment-archive
 
 hooks:
   BeforeInstall:
-    - location: server/wrieating/scripts/server_clear.sh
+    - location: /server_clear.sh
       timeout: 3000
       runas: root
   AfterInstall:
-    - location: server/wrieating/scripts/initialize.sh
+    - location: /initialize.sh
       timeout: 3000
       runas: root
   ApplicationStart:
-    - location: server/wrieating/scripts/server_start.sh
+    - location: /server_start.sh
       timeout: 3000
       runas: root
   ApplicationStop:
-    - location: server/wrieating/scripts/server_stop.sh
+    - location: /server_stop.sh
       timeout: 3000
       runas: root
