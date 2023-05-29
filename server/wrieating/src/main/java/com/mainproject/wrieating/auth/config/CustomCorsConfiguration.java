@@ -34,6 +34,7 @@ public class CustomCorsConfiguration implements CorsConfigurationSource {
 //        configuration.addAllowedOrigin("https://wrieating.kro.kr");
         configuration.addAllowedOrigin("https://wrieating.p-e.kr");
         configuration.addAllowedOrigin("https://d3nhkf5eonoyfy.cloudfront.net");
+        configuration.addAllowedOrigin("http://fe-004-s3-bucket.s3-website.ap-northeast-2.amazonaws.com");
         configuration.addAllowedMethod(HttpMethod.GET.name());
         configuration.addAllowedMethod(HttpMethod.POST.name());
         configuration.addAllowedMethod(HttpMethod.PUT.name());
