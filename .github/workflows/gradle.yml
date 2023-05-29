@@ -59,7 +59,7 @@ jobs:
     # CodeDeploy에게 배포 명령을 내립니다.
     - name: Code Deploy
       run: >
-        aws deploy create-deployment --application-name wrieating-main-project
+        aws deploy create-deployment --application-name cheche
         --deployment-config-name CodeDeployDefault.AllAtOnce
-        --deployment-group-name wrieating-deploy
+        --deployment-group-name cheche-group
         --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=deploy.zip
