@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    destination: /opt/codedeploy-agent/deployment-root/5dc14e31-dd79-4c1f-b906-69d78e49fe9b/d-ULW50PDQN/deployment-archive
+    destination: /home/ec2-user/build/
 
 hooks:
   BeforeInstall:
