@@ -39,6 +39,7 @@ public static void main(String[] args) {
 	SpringApplication.run(WrieatingApplication.class, args);
 
 	// 음식 아카이브 데이터 삽입
+
 	String filePath1 = "/home/ec2-user/action/server/wrieating/src/main/resources/totalfooddb.csv";
 	try {
 		List<FoodData> dataList1 = FoodCsvReader.readCsvFile(filePath1);
@@ -61,7 +62,7 @@ public static void main(String[] args) {
 		System.err.println("Error saving data to database: " + e.getMessage());
 	}
 	// 완료 - 주석 처리함
-}
+
 
 //	@PostConstruct
 //	public void printEnvVariables() {

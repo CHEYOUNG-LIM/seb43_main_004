@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { KeyboardEvent } from 'react'
+
 import styled, { css } from 'styled-components'
 // 폴더 인식이 안되서 잠깐 주석추가
 
@@ -7,12 +8,16 @@ interface inputProps {
   type: string
   placeholder?: string
   name: string
-  value?: string
+  value?: string | number
   defaultValue?: string
+  success?: string
   error?: string
   disabled?: boolean
+  min?: number | string
+  max?: number | string
   onChange(e: React.ChangeEvent<HTMLInputElement>): void
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void
+  onKeyDown?(e: KeyboardEvent<HTMLInputElement>): void
 }
 
 const Input = (props: inputProps) => {
@@ -24,26 +29,35 @@ const Input = (props: inputProps) => {
     value,
     defaultValue,
     error,
+    success,
     disabled,
+    min,
+    max,
     onChange,
     onBlur,
+    onKeyDown,
   } = props
 
   return (
     <InputWrapper>
       {label && <StyledLabel htmlFor={label}>{label}</StyledLabel>}
       <StyledInput
+        id={label}
         type={type}
         placeholder={placeholder}
         onChange={onChange}
         onBlur={onBlur}
+        onKeyDown={onKeyDown}
         disabled={disabled}
         name={name}
         value={value}
+        min={min}
+        max={max}
         defaultValue={defaultValue}
         autoComplete="off"
       />
       {error && <ErrorMessage>{error}</ErrorMessage>}
+      {success && <SuccessMessage>{success}</SuccessMessage>}
     </InputWrapper>
   )
 }
@@ -84,6 +98,10 @@ const ErrorMessage = styled.p`
   margin: 0.4rem 0 0 0.4rem;
   color: var(--color-danger);
   font-size: 1.2rem;
+`
+
+const SuccessMessage = styled(ErrorMessage)`
+  color: var(--color-point);
 `
 
 export default Input
