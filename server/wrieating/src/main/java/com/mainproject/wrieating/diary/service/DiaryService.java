@@ -156,6 +156,7 @@ public class DiaryService {
             recipesResponseDto.setRecipeId(recipeData.getRecipeId());
             recipesResponseDto.setRcpName(recipeData.getRcpName());
             recipesResponseDto.setImg(recipeData.getImg());
+            recipesResponseDto.setRcpWay(recipeData.getRcpWay());
             recipesResponseList.add(recipesResponseDto);
         }
 
